@@ -1,0 +1,227 @@
+html{
+    font-size:10px;
+}
+@media only screen and (min-width:1700px){
+    html{
+        font-size:12px;
+    }
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height:100vh;
+    font-size:1.5rem;
+    font-family:"Lato"
+}
+
+body,html{
+    margin:0;
+}
+
+header,footer{
+    height:60px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:1.7rem;
+}
+
+
+footer a {
+    margin:0 15px;
+}
+
+main{
+    flex:1 1 100%;
+    margin:0 15px;
+    padding:25px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media only screen and (min-width:501px){
+    main{
+        margin:0 25px;
+    }
+}
+
+@media only screen and (min-width:768px){
+    main{
+        margin:0 auto;
+        max-width:750px;
+    }
+}
+
+@media only screen and (min-width:991px){
+    main{
+        max-width:900px;
+    }
+}
+
+/*Gallery*/
+
+.gallery .grid-container {
+    display:block;
+}
+
+@media only screen and (min-width:768px){
+    
+.gallery .grid-container{
+    display:grid;
+    gap:10px;
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    grid-template-rows: repeat(auto-fill,minmax(150px,1fr));
+}
+
+
+.gallery .grid-container .grid-items.item-1{
+    grid-column: 1/3;
+    grid-row:1/3
+}
+
+.gallery .grid-container .grid-items.item-4{
+    grid-column: 4/5;
+    grid-row:1/3
+}
+
+.gallery .grid-container .grid-items.item-5{
+    grid-column: 1/2;
+    grid-row:3/4
+}
+
+.gallery .grid-container .grid-items.item-8{
+    grid-column:2/4;
+    grid-row:3/4
+}
+
+.gallery .grid-container .grid-items.item-9{
+    grid-column:4/6;
+    grid-row:3/4
+}
+
+}
+
+@media only screen and (min-width:501px) and (max-width:768px){
+        .gallery .grid-container{
+            display: grid;
+            gap:10px;
+            grid-template-columns: repeat(2,50%);
+            grid-template-rows: auto;
+        }
+            .gallery .grid-container .grid-items.item-1{
+                grid-column:1/2;
+                grid-row:1/2
+            }
+    
+            .gallery .grid-container .grid-items.item-2{
+                grid-column:2/3;
+                grid-row:1/2
+            }
+    
+            .gallery .grid-container .grid-items.item-3{
+                grid-column:1/2;
+                grid-row:2/3
+            }
+    
+            .gallery .grid-container .grid-items.item-4{
+                grid-column:2/3;
+                grid-row:2/3
+            }
+    
+            .gallery .grid-container .grid-items.item-5{
+                grid-column:1/2;
+                grid-row:3/4
+            }
+    
+            .gallery .grid-container .grid-items.item-6{
+                grid-column:2/3;
+                grid-row:3/4
+            }
+    
+            .gallery .grid-container .grid-items.item-7{
+                grid-column:1/2;
+                grid-row:4/5
+            }
+    
+            .gallery .grid-container .grid-items.item-8{
+                grid-column:2/3;
+                grid-row:4/5
+            }
+    
+            .gallery .grid-container .grid-items.item-9{
+                grid-column:1/2;
+                grid-row:5/6
+            }
+}
+
+
+.gallery .grid-container .grid-items img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    cursor:pointer;
+}
+
+.modal{
+    display: none;
+}
+
+body.modal-open .modal {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: rgba(0,0,0,.3);
+    display:block
+}
+
+body.modal-open .modal,.modal-content{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.modal-open .modal .modal-content{
+    width:90%;
+    height:70vh;
+    background:#fff;
+    padding:25px;
+    box-shadow:10px 10px 100px rgba(0,0,0,.3);
+    position:relative;
+}
+
+body.modal-open .modal .modal-content .modal-close{
+    position:absolute;
+    top:0;
+    right:0;
+    padding:15px;
+    font-weight: 600;
+    background-color: antiquewhite;
+    cursor:pointer
+}
+
+@media only screen and (min-width:501px){
+    
+    body.modal-open .modal .modal-content{
+        width:70%;
+        height:60vh
+    }
+}
+
+@media only screen and (min-width:768px){
+    
+    body.modal-open .modal .modal-content{
+        width:50%;
+    }
+}
+
+@media only screen and (min-width:1000px){
+    
+    body.modal-open .modal .modal-content{
+        width:100%;
+        max-width:900px
+    }
+}
